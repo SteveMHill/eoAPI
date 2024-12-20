@@ -25,8 +25,9 @@ cd eoAPI
 
 Use docker-compose to build and start all the services:
 
-Commands:  
+``` 
 docker-compose up --build
+```
 
 This command will:
 
