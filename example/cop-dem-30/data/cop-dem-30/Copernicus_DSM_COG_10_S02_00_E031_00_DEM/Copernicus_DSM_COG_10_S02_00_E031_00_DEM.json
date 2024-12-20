@@ -1,0 +1,135 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/grid/v1.1.0/schema.json"
+  ],
+  "id": "Copernicus_DSM_COG_10_S02_00_E031_00_DEM",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          31.999861111111112,
+          -1.999861111111111
+        ],
+        [
+          31.999861111111112,
+          -0.9998611111111111
+        ],
+        [
+          30.999861111111112,
+          -0.9998611111111111
+        ],
+        [
+          30.999861111111112,
+          -1.999861111111111
+        ],
+        [
+          31.999861111111112,
+          -1.999861111111111
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    30.999861111111112,
+    -1.999861111111111,
+    31.999861111111112,
+    -0.9998611111111111
+  ],
+  "properties": {
+    "platform": "tandem-x",
+    "gsd": 30,
+    "providers": [
+      {
+        "name": "European Space Agency",
+        "roles": [
+          "licensor"
+        ],
+        "url": "https://spacedata.copernicus.eu/documents/20126/0/CSCDA_ESA_Mission-specific+Annex.pdf"
+      },
+      {
+        "name": "Sinergise",
+        "roles": [
+          "producer",
+          "processor"
+        ],
+        "url": "https://registry.opendata.aws/copernicus-dem/"
+      }
+    ],
+    "license": "proprietary",
+    "proj:epsg": 4326,
+    "proj:transform": [
+      0.0002777777777777778,
+      0.0,
+      30.999861111111112,
+      0.0,
+      -0.0002777777777777778,
+      -0.9998611111111111
+    ],
+    "proj:shape": [
+      3600,
+      3600
+    ],
+    "proj:centroid": {
+      "lat": -1.5,
+      "lon": 31.5
+    },
+    "grid:code": "CDEM-S02E031",
+    "datetime": "2021-04-22T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "handbook",
+      "href": "https://object.cloud.sdsc.edu/v1/AUTH_opentopography/www/metadata/Copernicus_metadata.pdf",
+      "type": "application/pdf",
+      "title": "Copernicus DEM User handbook",
+      "description": "Also includes data usage information"
+    },
+    {
+      "rel": "license",
+      "href": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "type": "Copernicus Data Access"
+    },
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Copernicus DEM GLO-30"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Copernicus DEM GLO-30"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Copernicus DEM GLO-30"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "data/Copernicus_DSM_COG_10_S02_00_E031_00_DEM/Copernicus_DSM_COG_10_S02_00_E031_00_DEM.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Data",
+      "raster:bands": [
+        {
+          "sampling": "point",
+          "data_type": "float32",
+          "spatial_resolution": 30,
+          "unit": "meter"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "cop-dem-glo-30"
+}
