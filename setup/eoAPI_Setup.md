@@ -9,10 +9,10 @@ Have look at <https://docs.docker.com/compose/install/>
 
 Start by cloning the eoAPI GitHub repository:  
 
-Commands:  
+```
 git clone <https://github.com/developmentseed/eoAPI.git>  
 cd eoAPI
-
+```
 **1.3. Configure Environment Variables**
 
 - Create a .env file in the root directory of the project (if not already present).
