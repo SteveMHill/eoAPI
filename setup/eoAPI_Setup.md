@@ -1,4 +1,4 @@
-**eoAPI**
+*eoAPI**
 
 1. **Setup**
     1. **Install and start Docker Compose**
@@ -68,7 +68,7 @@ This command will:
 - **Details**: This service uses the image postgis/postgis:15-3.3 and exposes port 5432. It initializes with environment variables that set the database name, user, and password.
 
 
-**3. Ingest data into database**
+**3. Ingest raster data into database**
 
 3.1 **Install pypgstac**
 
@@ -93,3 +93,26 @@ pypgstac load items item.json --dsn postgresql://username:password@0.0.0.0:5439/
 pypgstac load collections data/cop-dem-30/collection.json --dsn postgresql://username:password@0.0.0.0:5439/postgis
 pypgstac load items data/cop-dem-30/Copernicus_DSM_COG_10_S01_00_E030_00_DEM/Copernicus_DSM_COG_10_S01_00_E030_00_DEM.json --dsn postgresql://username:password@0.0.0.0:5439/postgis
 ```
+
+3.5. **Test if it worked**
+
+Visit http://localhost:8085/collections/cop-dem-glo-30
+
+
+**4. Ingest vector data into database**
+
+4.1. **Convert shapefile to sql**
+
+```
+shp2pgsql nationalparks.shp public.nationalparks > nationalparks.sql
+```
+
+4.2. **Insert into database**
+
+```
+psql -d postgresql://username:password@0.0.0.0:5439/postgis -f nationalparks.sql
+```
+
+4.3. **Test if it worked**
+
+Visit http://localhost:8083/collections/public.nationalparks
